@@ -9,6 +9,11 @@ let calibrate = true;
 //Carmen Added
 let fullPath = [[-0, -0]];
 
+var gradient = ctx.createLinearGradient(0, 0, 170, 0);
+  gradient.addColorStop("0", "magenta");
+  gradient.addColorStop("0.5" ,"blue");
+  gradient.addColorStop("1.0", "red");
+
 
 
 document.body.addEventListener("click", () => {calibrate = true})
@@ -41,10 +46,7 @@ function draw(dist_data){
 
   fullPath.push( dist_data );
   
-  var gradient = ctx.createLinearGradient(0, 0, 170, 0);
-  gradient.addColorStop("0", "magenta");
-  gradient.addColorStop("0.5" ,"blue");
-  gradient.addColorStop("1.0", "red");
+  
   
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.strokeStyle = gradient;
