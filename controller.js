@@ -9,7 +9,7 @@ let calibrate = true;
 //Carmen Added
 let fullPath = [];
 
-var gradient = ctx.createLinearGradient(0, 0, 300, 0);
+var gradient = ctx.createLinearGradient(0, 0, 230, 0);
   gradient.addColorStop("0", "magenta");
   gradient.addColorStop("1" ,"blue");
   gradient.addColorStop("2", "red");
