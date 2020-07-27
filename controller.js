@@ -9,7 +9,7 @@ let calibrate = true;
 //Carmen Added
 let fullPath = [];
 
-var gradient = ctx.createLinearGradient(0, 0, 270, 270);
+var gradient = ctx.createLinearGradient(0, 0, 200, 170);
   gradient.addColorStop("0", "magenta");
   gradient.addColorStop("0.5" ,"blue");
   gradient.addColorStop("1.0", "red");
@@ -18,17 +18,7 @@ var gradient = ctx.createLinearGradient(0, 0, 270, 270);
 
 document.body.addEventListener("click", () => {calibrate = true})
 
-function handleSensor(e){
-  if(fullPath.length == 0){
-    let x = -19 + window.innerWidth/2;
-    let y = -215 + window.innerHeight/2;
-    ctx.beginPath();
-    ctx.arc(x, y, 20, 0, 2 * Math.PI);
-    ctx.fillStyle = "#f44336";
-    ctx.fill();
-    ctx.closePath();
-  }
-  
+function handleSensor(e){  
   let quaternion = e.target.quaternion;
   let angles = toEuler(quaternion);
 
