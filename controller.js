@@ -29,7 +29,7 @@ function handleSensor(e){
   }
   
   dist = angles.map((angle, i) => calcDist(angle, initPos[i]));
-  // console.log(dist);
+   console.log(dist);
   draw(dist);
 }   
 
