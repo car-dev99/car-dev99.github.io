@@ -7,7 +7,7 @@ let initPos;
 let dist;
 let calibrate = true;
 //Carmen Added
-let fullPath = [[-0, -0]];
+let fullPath = [];
 
 var gradient = ctx.createLinearGradient(0, 0, 170, 0);
   gradient.addColorStop("0", "magenta");
@@ -35,6 +35,7 @@ function handleSensor(e){
 
 
 function draw(dist_data){
+  //Add new Coordinates to path
   fullPath.push( dist_data );
   
   console.log("-------------------");
@@ -44,15 +45,14 @@ function draw(dist_data){
   console.log(fullPath);
   console.log("-------------------");
 
-  fullPath.push( dist_data );
   
   
-  
+  //Clear Canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.strokeStyle = gradient;
   ctx.lineWidth = 10;
   
-  
+  //Start Drawing Path
   ctx.beginPath();
     let x = fullPath[0][0] + window.innerWidth/2;
     let y = fullPath[0][1] + window.innerHeight/2;
