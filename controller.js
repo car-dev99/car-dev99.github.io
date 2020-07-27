@@ -38,13 +38,13 @@ function draw(dist_data){
   //Add new Coordinates to path
   fullPath.push( dist_data );
   
-  console.log("-------------------");
+/**  console.log("-------------------");
   console.log("Curr Pos");
   console.log(dist_data);
   console.log("Full Path");
   console.log(fullPath);
   console.log("-------------------");
-
+*/
   
   
   //Clear Canvas
