@@ -56,7 +56,7 @@ function draw(dist_data){
   ctx.beginPath();
     let x = fullPath[0][0] + window.innerWidth/2;
     let y = fullPath[0][1] + window.innerHeight/2;
-   ctx.moveTo(-0, -0);
+   ctx.moveTo(x, y);
   for(var i =1  ; i < fullPath.length; i++){
      x = fullPath[i][0] + window.innerWidth/2;
      y = fullPath[i][1] + window.innerHeight/2;
