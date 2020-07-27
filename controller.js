@@ -7,7 +7,7 @@ let initPos;
 let dist;
 let calibrate = true;
 //Carmen Added
-let prevPos = [-0, -0];
+let fullPath = [[-0, -0]];
 
 document.body.addEventListener("click", () => {calibrate = true})
 
@@ -28,14 +28,34 @@ function handleSensor(e){
 
 
 function draw(dist_data){
- 
+  fullPath.push( dist_data );
+  
   console.log("-------------------");
   console.log("Curr Pos");
   console.log(dist_data);
-  console.log("Prev Pos");
-  console.log(prevPos);
+  console.log("Full Path");
+  console.log(fullPath);
   console.log("-------------------");
 
+  fullPath.push( dist_data );
+  
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.arc(x, y, 20, 0, 2 * Math.PI);
+  ctx.fillStyle = "#f44336";
+  ctx.fill();
+  ctx.closePath(); 
+  
+  
+  ctx.beginPath();
+  let x = fullPath[0][0] + window.innerWidth/2;
+  let y = fullPath[0][1] + window.innerHeight/2;
+  for(var i =1  ; i < fullPath.length; i++){
+    let x = fullPath[i][0] + window.innerWidth/2;
+    let y = fullPath[i][1] + window.innerHeight/2;
+    
+    ctx.lineTo(x, y);
+    ctx.stroke();
+  }
   
   
  /* ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -48,24 +68,6 @@ function draw(dist_data){
   ctx.fillStyle = "#f44336";
   ctx.fill();
   ctx.closePath();  */
-
-  let x = dist_data[0] + window.innerWidth/2;
-  let y = dist_data[1] + window.innerHeight/2;
-
-  ctx.beginPath();
-  ctx.arc(x, y, 20, 0, 2 * Math.PI);
-  ctx.fillStyle = "#f44336";
-  ctx.fill();
-  ctx.closePath();
-
-  ctx.beginPath();
-  ctx.moveTo(prevPos[0], prevPos[1]);
-  ctx.lineTo(x, y);
-  ctx.stroke();
-  
-
-  prevPos[0]= dist_data[0] + window.innerWidth/2;
-  prevPos[1]= dist_data[1] + window.innerHeight/2;
 }
 
 
