@@ -7,7 +7,7 @@ let initPos;
 let dist;
 let calibrate = true;
 //Carmen Added
-let prevPos = [0,0];
+let prevPos = [-0, -0];
 
 document.body.addEventListener("click", () => {calibrate = true})
 
@@ -56,14 +56,16 @@ function draw(dist_data){
   ctx.arc(x, y, 20, 0, 2 * Math.PI);
   ctx.fillStyle = "#f44336";
   ctx.fill();
+  ctx.closePath();
 
+  ctx.beginPath();
   ctx.moveTo(prevPos[0], prevPos[1]);
   ctx.lineTo(x, y);
   ctx.stroke();
-  ctx.closePath();
+  
 
-  prevPos[0]= dist_data[0];
-  prevPos[1]= dist_data[1];
+  prevPos[0]= dist_data[0] + window.innerWidth/2;
+  prevPos[1]= dist_data[1] + window.innerHeight/2;
 }
 
 
