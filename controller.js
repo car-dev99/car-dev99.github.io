@@ -6,6 +6,8 @@ sensor.start();
 let initPos;
 let dist;
 let calibrate = true;
+//Carmen Added
+let prevPos = [0,0];
 
 document.body.addEventListener("click", () => {calibrate = true})
 
