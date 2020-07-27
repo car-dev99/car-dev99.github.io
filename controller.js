@@ -26,8 +26,17 @@ function handleSensor(e){
 
 
 function draw(dist_data){
+ 
+  console.log("-------------------");
+  console.log("Curr Pos");
   console.log(dist_data);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  console.log("Prev Pos");
+  console.log(prevPos);
+  console.log("-------------------");
+
+  
+  
+ /* ctx.clearRect(0, 0, canvas.width, canvas.height);
   let x = dist_data[0] + window.innerWidth/2;
   let y = dist_data[1] + window.innerHeight/2;
   console.log(x);
@@ -36,7 +45,23 @@ function draw(dist_data){
   ctx.arc(x, y, 20, 0, 2 * Math.PI);
   ctx.fillStyle = "#f44336";
   ctx.fill();
+  ctx.closePath();  */
+
+  let x = dist_data[0] + window.innerWidth/2;
+  let y = dist_data[1] + window.innerHeight/2;
+
+  ctx.beginPath();
+  ctx.arc(x, y, 20, 0, 2 * Math.PI);
+  ctx.fillStyle = "#f44336";
+  ctx.fill();
+
+  ctx.moveTo(prevPos[0], prevPos[1]);
+  ctx.lineTo(x, y);
+  ctx.stroke();
   ctx.closePath();
+
+  prevPos[0]= dist_data[0];
+  prevPos[1]= dist_data[1];
 }
 
 
