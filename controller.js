@@ -40,17 +40,12 @@ function draw(dist_data){
   fullPath.push( dist_data );
   
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  let x = dist_data[0] + window.innerWidth/2;
-  let y = dist_data[1] + window.innerHeight/2;
-  ctx.arc(x, y, 20, 0, 2 * Math.PI);
-  ctx.fillStyle = "#f44336";
-  ctx.fill();
-  ctx.closePath(); 
+  
   
   
   ctx.beginPath();
-   x = fullPath[0][0] + window.innerWidth/2;
-   y = fullPath[0][1] + window.innerHeight/2;
+  let x = fullPath[0][0] + window.innerWidth/2;
+  let y = fullPath[0][1] + window.innerHeight/2;
   for(var i =1  ; i < fullPath.length; i++){
      x = fullPath[i][0] + window.innerWidth/2;
      y = fullPath[i][1] + window.innerHeight/2;
@@ -58,6 +53,15 @@ function draw(dist_data){
     ctx.lineTo(x, y);
     ctx.stroke();
   }
+  ctx.closePath(); 
+  
+  ctx.beginPath();
+    x = dist_data[0] + window.innerWidth/2;
+    y = dist_data[1] + window.innerHeight/2;
+    ctx.arc(x, y, 20, 0, 2 * Math.PI);
+    ctx.fillStyle = "#f44336";
+    ctx.fill();
+  ctx.closePath(); 
   
   
  /* ctx.clearRect(0, 0, canvas.width, canvas.height);
