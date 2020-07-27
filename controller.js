@@ -9,9 +9,9 @@ let calibrate = true;
 //Carmen Added
 let fullPath = [];
 
-var gradient = ctx.createLinearGradient(100, 50, 170, 170);
+var gradient = ctx.createLinearGradient(0, 0, 170, 0 );
   gradient.addColorStop("0", "magenta");
-  gradient.addColorStop("0.5" ,"blue");
+  gradient.addColorStop("0.9" ,"blue");
   gradient.addColorStop("1.0", "red");
 
 
@@ -29,7 +29,7 @@ function handleSensor(e){
   }
   
   dist = angles.map((angle, i) => calcDist(angle, initPos[i]));
-  //console.log(dist);
+  console.log(dist);
   draw(dist);
 }   
 
