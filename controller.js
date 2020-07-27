@@ -51,8 +51,8 @@ function draw(dist_data){
      y = fullPath[i][1] + window.innerHeight/2;
     
     ctx.lineTo(x, y);
-    ctx.stroke();
   }
+  ctx.stroke();
   ctx.closePath(); 
   
   ctx.beginPath();
