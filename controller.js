@@ -81,6 +81,7 @@ function draw(dist_data){
         y = fullPath[i][1] + window.innerHeight/2;
         ctx.lineTo(x, y);
       }
+      breakPath= false;
     }else{
       breakPath = true;
       ctx.stroke();
