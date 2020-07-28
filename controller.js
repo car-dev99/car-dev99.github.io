@@ -30,7 +30,7 @@ function handleSensor(e){
   
   dist = angles.map((angle, i) => calcDist(angle, initPos[i]));
  // console.log(dist);
-console.log("IN");
+
   if(pen == true){
     draw(dist);
   }else{
