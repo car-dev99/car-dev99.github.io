@@ -9,23 +9,13 @@
     <h1 style="margin:auto;"> Start Moving to Draw </h1>
     <canvas class="canvas"></canvas>
     
-    <div style="position: relative;">
-     <canvas id="layer1" width="100" height="100" 
-       style="position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
-     <canvas id="layer2" width="100" height="100" 
-       style="position: absolute; left: 0; top: 0; z-index: 1;opacity:0.5;"></canvas>
-    </div>
+  
    
 
     <script>
-        //let canvas = document.querySelector(".canvas");
-        //let ctx = canvas.getContext("2d");
-      
-      let canvas = document.querySelector("#layer1");
-      let ctx = canvas.getContext("2d");
-      
-      let canvasTop = document.querySelector("#layer2");
-      let ctxTop = canvas.getContext("2d");
+        let canvas = document.querySelector(".canvas");
+        let ctx = canvas.getContext("2d");
+
       
         let pen = false;
         let viewLaser = true;
@@ -38,14 +28,7 @@
             canvas.setAttribute("width", window.innerWidth);
             canvas.setAttribute("height", window.innerHeight);
         });
-      
-      canvasTop.setAttribute("width", window.innerWidth);
-        canvasTop.setAttribute("height", window.innerHeight);
 
-        window.addEventListener("resize", () => {
-            canvasTop.setAttribute("width", window.innerWidth);
-            canvasTop.setAttribute("height", window.innerHeight);
-        });
 
       document.getElementById("drawButton").ontouchstart = function() {mouseDown()};
       document.getElementById("drawButton").ontouchend = function() {mouseUp()};
