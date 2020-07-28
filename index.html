@@ -2,7 +2,7 @@
 <html>
   <head></head>
   <body>
-      <button id="drawButton" style="width:100%;height:100px;background-color:magenta;">Start Drawing</button>
+      <button id="drawButton" style="width:100%;height:100px;background-color:magenta;color:white; font-size:50px;">Start Drawing</button>
 
     
     
@@ -13,6 +13,10 @@
     <script>
         let canvas = document.querySelector(".canvas");
         let ctx = canvas.getContext("2d");
+      
+        let drawing = false;
+        let laser = true;
+      
 
         canvas.setAttribute("width", window.innerWidth);
         canvas.setAttribute("height", window.innerHeight);
@@ -27,12 +31,15 @@
 
       function mouseDown() {
         document.getElementById("drawButton").innerHTML = "Drawing..";
+        drawing = true;
+        laser = false;
 
       }
 
       function mouseUp() {
         document.getElementById("drawButton").innerHTML = "Draw";
-
+        drawing = false;
+        laser = true;
       }
       
 
