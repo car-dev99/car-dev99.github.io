@@ -74,9 +74,17 @@ function draw(dist_data){
     {
       x = fullPath[i][0] + window.innerWidth/2;
       y = fullPath[i][1] + window.innerHeight/2;
-       ctx.lineTo(x, y);
+      ctx.lineTo(x, y);
+    }else{
+      if((i+1)<fullPath.length)
+      {
+        ctx.stroke();
+        ctx.closePath();
+        let x = fullPath[i+1][0] + window.innerWidth/2;
+        let y = fullPath[i+1][1] + window.innerHeight/2;
+        ctx.moveTo(x, y);
+      }
     }
-
   }
   ctx.stroke();
   ctx.closePath(); 
