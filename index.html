@@ -14,7 +14,7 @@
         let canvas = document.querySelector(".canvas");
         let ctx = canvas.getContext("2d");
       
-        let draw = false;
+        let pen = false;
         let viewLaser = true;
       
 
@@ -31,14 +31,14 @@
 
       function mouseDown() {
         document.getElementById("drawButton").innerHTML = "Drawing..";
-        draw = true;
+        pen = true;
         viewLaser = false;
 
       }
 
       function mouseUp() {
         document.getElementById("drawButton").innerHTML = "Draw";
-        draw = false;
+        pen = false;
         viewLaser = true;
       }
       
