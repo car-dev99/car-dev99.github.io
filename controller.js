@@ -2,7 +2,7 @@ const sensor = new AbsoluteOrientationSensor({frequency: 60});
 sensor.addEventListener("reading", (e) => handleSensor(e));
 sensor.start();
 
-
+ var sizeof = require('object-sizeof');
 let initPos;
 let dist;
 let calibrate = true;
@@ -69,7 +69,7 @@ function draw(dist_data){
   
   
   /////see sizes
-  var sizeof = require('object-sizeof')
+ 
   console.log("FullPath");
   console.log(sizeof(fullPath));
   
