@@ -41,7 +41,7 @@ function handleSensor(e){
 function laser(dist_data){
   draw(dist_data);
   
-  ctxTop.clearRect(0, 0, canvasTop.width, canvasTop.height);
+ // ctxTop.clearRect(0, 0, canvasTop.width, canvasTop.height);
   let x = dist_data[0] + window.innerWidth/2;
   let y = dist_data[1] + window.innerHeight/2;
 
@@ -60,7 +60,7 @@ function draw(dist_data){
   fullPath.push( dist_data );
   
   //Clear Canvas
-  //ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.strokeStyle = "#7242f5" ; //gradient;
   ctx.lineWidth = 7;
   
