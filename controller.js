@@ -63,7 +63,7 @@ function draw(dist_data){
     //Add new Coordinates to path
   if(pen)
   {
-    fullPath.push( dist_data );
+    fullPath.push( dist_data[0], dist_data[1], penColor );
   }
   
   
@@ -79,7 +79,7 @@ function draw(dist_data){
   
   //Clear Canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.strokeStyle = penColor ;//"#7242f5" ; //gradient;
+ // ctx.strokeStyle = penColor ;//"#7242f5" ; //gradient;
   ctx.lineWidth = 7;
   
   let breakPath = false;
@@ -91,6 +91,7 @@ function draw(dist_data){
   for(var i =1  ; i < fullPath.length; i++){
     if(fullPath[i][0] != -9999 && fullPath[i][1] != -9999)
     {
+      ctx.strokeStyle = fullPath[i][2];
       if(breakPath)
       {
         ctx.beginPath();
