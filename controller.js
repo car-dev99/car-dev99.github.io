@@ -53,11 +53,8 @@ function laser(dist_data){
 }
 
 function draw(dist_data){
-  
-  //Add new Coordinates to path
+    //Add new Coordinates to path
   fullPath.push( dist_data );
-  
-  
   
   //Clear Canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -65,22 +62,21 @@ function draw(dist_data){
   ctx.lineWidth = 7;
   
   //Start Drawing Path
-  
   ctx.beginPath();
     let x = fullPath[0][0] + window.innerWidth/2;
     let y = fullPath[0][1] + window.innerHeight/2;
    ctx.moveTo(x, y);
   for(var i =1  ; i < fullPath.length; i++){
+    if(fullPath[i][0] != -9999 && fullPath[i][1] != -9999)
+    {
       x = fullPath[i][0] + window.innerWidth/2;
       y = fullPath[i][1] + window.innerHeight/2;
       ctx.lineTo(x, y);
+    }
+     
   }
-    ctx.stroke();
-    ctx.closePath(); 
- 
-  
-  
-  
+  ctx.stroke();
+  ctx.closePath(); 
  
 }
 
