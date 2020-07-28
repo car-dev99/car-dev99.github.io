@@ -38,8 +38,7 @@ function laser(dist_data){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   let x = dist_data[0] + window.innerWidth/2;
   let y = dist_data[1] + window.innerHeight/2;
-  console.log(x);
-  console.log(y);
+
   ctx.beginPath();
   ctx.arc(x, y, 20, 0, 2 * Math.PI);
   ctx.fillStyle = "#f44336";
