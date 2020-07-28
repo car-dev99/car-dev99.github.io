@@ -39,6 +39,7 @@ function handleSensor(e){
 }   
 
 function laser(dist_data){
+  draw(dist_data);
   
   ctxTop.clearRect(0, 0, canvasTop.width, canvasTop.height);
   let x = dist_data[0] + window.innerWidth/2;
@@ -48,8 +49,10 @@ function laser(dist_data){
   ctxTop.arc(x, y, 20, 0, 2 * Math.PI);
   ctxTop.fillStyle = "#f44336";
   ctxTop.fill();
-  ctxTop.closePath();  
+  ctxTop.closePath(); 
   
+  
+   
 }
 
 function draw(dist_data){
