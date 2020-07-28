@@ -40,15 +40,15 @@ console.log("IN");
 
 function laser(dist_data){
   
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctxTop.clearRect(0, 0, canvasTop.width, canvasTop.height);
   let x = dist_data[0] + window.innerWidth/2;
   let y = dist_data[1] + window.innerHeight/2;
 
-  ctx.beginPath();
-  ctx.arc(x, y, 20, 0, 2 * Math.PI);
-  ctx.fillStyle = "#f44336";
-  ctx.fill();
-  ctx.closePath();  
+  ctxTop.beginPath();
+  ctxTop.arc(x, y, 20, 0, 2 * Math.PI);
+  ctxTop.fillStyle = "#f44336";
+  ctxTop.fill();
+  ctxTop.closePath();  
   
 }
 
