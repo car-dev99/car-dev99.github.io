@@ -15,7 +15,7 @@
         let ctx = canvas.getContext("2d");
       
         let draw = false;
-        let laser = true;
+        let viewLaser = true;
       
 
         canvas.setAttribute("width", window.innerWidth);
@@ -32,14 +32,14 @@
       function mouseDown() {
         document.getElementById("drawButton").innerHTML = "Drawing..";
         draw = true;
-        laser = false;
+        viewLaser = false;
 
       }
 
       function mouseUp() {
         document.getElementById("drawButton").innerHTML = "Draw";
         draw = false;
-        laser = true;
+        viewLaser = true;
       }
       
 
