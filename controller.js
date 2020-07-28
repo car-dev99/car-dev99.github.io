@@ -69,11 +69,11 @@ function draw(dist_data){
   
   /////see sizes
 
-  let CanvasIMG = canvas.toDataURL();
+ /** let CanvasIMG = canvas.toDataURL();
   console.log("Image");
   console.log(CanvasIMG);
 
-  
+  */
   //////////////
   
   
