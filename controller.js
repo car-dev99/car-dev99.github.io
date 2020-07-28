@@ -61,6 +61,7 @@ function draw(dist_data){
   ctx.strokeStyle = "#7242f5" ; //gradient;
   ctx.lineWidth = 7;
   
+  let breakPath = false;
   //Start Drawing Path
   ctx.beginPath();
     let x = fullPath[0][0] + window.innerWidth/2;
@@ -69,14 +70,31 @@ function draw(dist_data){
   for(var i =1  ; i < fullPath.length; i++){
     if(fullPath[i][0] != -9999 && fullPath[i][1] != -9999)
     {
-      x = fullPath[i][0] + window.innerWidth/2;
-      y = fullPath[i][1] + window.innerHeight/2;
-      ctx.lineTo(x, y);
+      if(breakPath)
+      {
+        ctx.beginPath();
+        let x = fullPath[i][0] + window.innerWidth/2;
+        let y = fullPath[i][1] + window.innerHeight/2;
+        ctx.moveTo(x, y);
+      }else{
+        x = fullPath[i][0] + window.innerWidth/2;
+        y = fullPath[i][1] + window.innerHeight/2;
+        ctx.lineTo(x, y);
+      }
+    }else{
+      breakPath = true;
+      ctx.stroke();
+      ctx.closePath();
     }
      
   }
-  ctx.stroke();
-  ctx.closePath(); 
+  
+  if(!breakPath)
+  {
+     ctx.stroke();
+     ctx.closePath(); 
+  }
+ 
  
 }
 
