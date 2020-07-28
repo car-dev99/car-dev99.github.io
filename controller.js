@@ -43,10 +43,10 @@ function laser(dist_data){
   if(fullPath.length != 0)
   {
      draw(dist_data);
+  }else{
+   ctxTop.clearRect(0, 0, canvasTop.width, canvasTop.height);
   }
- 
-  
- // ctxTop.clearRect(0, 0, canvasTop.width, canvasTop.height);
+
   let x = dist_data[0] + window.innerWidth/2;
   let y = dist_data[1] + window.innerHeight/2;
 
