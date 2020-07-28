@@ -6,7 +6,7 @@ sensor.start();
 let initPos;
 let dist;
 let calibrate = true;
-//Carmen Added
+
 let fullPath = [];
 
 var gradient = ctx.createLinearGradient(0, 0, 170, 0 );
@@ -57,13 +57,6 @@ function draw(dist_data){
   //Add new Coordinates to path
   fullPath.push( dist_data );
   
-/**  console.log("-------------------");
-  console.log("Curr Pos");
-  console.log(dist_data);
-  console.log("Full Path");
-  console.log(fullPath);
-  console.log("-------------------");
-*/
   
   
   //Clear Canvas
