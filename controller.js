@@ -63,7 +63,7 @@ function draw(dist_data){
     //Add new Coordinates to path
   if(pen)
   {
-    fullPath.push( dist_data[0], dist_data[1], penColor );
+    fullPath.push( [dist_data[0], dist_data[1], penColor] );
   }
   
   
