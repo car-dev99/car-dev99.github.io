@@ -58,12 +58,17 @@
       }
 
       function mouseUp() {
+        //show that pen was lifted
+        fullPath.push([-9999,-9999]);
+        console.log("Lifted");
+        
         document.getElementById("drawButton").innerHTML = "Draw";
         pen = false;
         viewLaser = true;
         
-        //show that pen was lifted
-        fullPath.push([-9999,-9999]);
+       
+        
+        
       }
       
 
