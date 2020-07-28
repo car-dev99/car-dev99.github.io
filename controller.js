@@ -68,13 +68,10 @@ function draw(dist_data){
   
   
   /////see sizes
- 
-  console.log("FullPath");
-  console.log(sizeof(fullPath));
-  
+
   let CanvasIMG = canvas.toDataURL();
   console.log("Image");
-  console.log(sizeof(CanvasIMG));
+  console.log(CanvasIMG);
 
   
   //////////////
