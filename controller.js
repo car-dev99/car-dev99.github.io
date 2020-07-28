@@ -70,10 +70,13 @@ function draw(dist_data){
     let y = fullPath[0][1] + window.innerHeight/2;
    ctx.moveTo(x, y);
   for(var i =1  ; i < fullPath.length; i++){
-     x = fullPath[i][0] + window.innerWidth/2;
-     y = fullPath[i][1] + window.innerHeight/2;
-    
-    ctx.lineTo(x, y);
+    if(fullPath[i][0] != -9999 && fullPath[i][1]!= -9999) //check if pen was lifted
+    {
+      x = fullPath[i][0] + window.innerWidth/2;
+      y = fullPath[i][1] + window.innerHeight/2;
+       ctx.lineTo(x, y);
+    }
+
   }
   ctx.stroke();
   ctx.closePath(); 
