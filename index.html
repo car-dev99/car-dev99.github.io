@@ -2,11 +2,17 @@
 <html>
   <head></head>
   <body>
+    <h1 style="margin:auto;"> Hold button to Draw </h1>
       <button id="drawButton" style="width:100%;height:100px;background-color:magenta;color:white; font-size:50px;">Start Drawing</button>
-
+       <div>
+        <button id="redButton" style="background-color:red" onclick="changePenColor('#cf060a')"></button>
+         <button id="blueButton" style="background-color:blue" onclick="changePenColor('#0617cf')"></button>
+         <button id="greenButton" style="background-color:green" onclick="changePenColor('#027d0f')"></button>
+      </div>
     
     
-    <h1 style="margin:auto;"> Start Moving to Draw </h1>
+    
+    
     <canvas class="canvas"></canvas>
     
   
@@ -19,6 +25,7 @@
       
         let pen = false;
         let viewLaser = true;
+        let penColor = "#cf060a"; 
       
 
         canvas.setAttribute("width", window.innerWidth);
@@ -49,10 +56,16 @@
         pen = false;
         viewLaser = true;
         
-       
-        
+         
         
       }
+      
+     function changePenColor(newColor){
+       penColor = newColor;  
+      }
+      
+      
+      
       
 
     </script>
