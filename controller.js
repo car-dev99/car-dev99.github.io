@@ -31,8 +31,6 @@ function handleSensor(e){
   dist = angles.map((angle, i) => calcDist(angle, initPos[i]));
  // console.log(dist);
 
-  console.log("Pen: " );
-  console.log(pen);
   if(pen == true){
     draw(dist);
   }else{
@@ -41,7 +39,7 @@ function handleSensor(e){
 }   
 
 function laser(dist_data){
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+ // ctx.clearRect(0, 0, canvas.width, canvas.height);
   let x = dist_data[0] + window.innerWidth/2;
   let y = dist_data[1] + window.innerHeight/2;
 
