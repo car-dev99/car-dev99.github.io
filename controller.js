@@ -39,7 +39,7 @@ function handleSensor(e){
 }   
 
 function laser(dist_data){
- // ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   let x = dist_data[0] + window.innerWidth/2;
   let y = dist_data[1] + window.innerHeight/2;
 
