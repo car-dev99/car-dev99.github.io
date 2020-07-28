@@ -29,10 +29,24 @@ function handleSensor(e){
   }
   
   dist = angles.map((angle, i) => calcDist(angle, initPos[i]));
-  console.log(dist);
-  draw(dist);
+  //console.log(dist);
+ // draw(dist);
+  laser(dist);
 }   
 
+function laser(dist_data){
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  let x = dist_data[0] + window.innerWidth/2;
+  let y = dist_data[1] + window.innerHeight/2;
+  console.log(x);
+  console.log(y);
+  ctx.beginPath();
+  ctx.arc(x, y, 20, 0, 2 * Math.PI);
+  ctx.fillStyle = "#f44336";
+  ctx.fill();
+  ctx.closePath();  
+  
+}
 
 function draw(dist_data){
   //Add new Coordinates to path
@@ -49,7 +63,7 @@ function draw(dist_data){
   
   //Clear Canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.strokeStyle = gradient;
+  ctx.strokeStyle = red; //gradient;
   ctx.lineWidth = 7;
   
   //Start Drawing Path
@@ -68,16 +82,7 @@ function draw(dist_data){
   
   
   
- /* ctx.clearRect(0, 0, canvas.width, canvas.height);
-  let x = dist_data[0] + window.innerWidth/2;
-  let y = dist_data[1] + window.innerHeight/2;
-  console.log(x);
-  console.log(y);
-  ctx.beginPath();
-  ctx.arc(x, y, 20, 0, 2 * Math.PI);
-  ctx.fillStyle = "#f44336";
-  ctx.fill();
-  ctx.closePath();  */
+ 
 }
 
 
