@@ -2,30 +2,29 @@
 <html>
   <head></head>
   <body>
+    <button id="demo" style="width:100%;height:30%;">Click me.</button>
+
+      <script>
+      document.getElementById("demo").onmousedown = function() {mouseDown()};
+      document.getElementById("demo").onmouseup = function() {mouseUp()};
+
+      function mouseDown() {
+        document.getElementById("demo").innerHTML = "The mouse button is held down.";
+        console.log("DOWN");
+      }
+
+      function mouseUp() {
+        document.getElementById("demo").innerHTML = "You released the mouse button.";
+        console.log("UP");
+      }
+      </script>
+    
     
     <h1 style="margin:auto;"> Start Moving to Draw </h1>
     <canvas class="canvas"></canvas>
    
-    <button id="demo">Click me.</button>
 
     <script>
-        
-
-         ///On click and release
-          document.getElementById("demo").onmousedown = function() {mouseDown()};
-          document.getElementById("demo").onmouseup = function() {mouseUp()};
-
-          function mouseDown() {
-            document.getElementById("demo").innerHTML = "The mouse button is held down.";
-          }
-
-          function mouseUp() {
-            document.getElementById("demo").innerHTML = "You released the mouse button.";
-          }
-      ////
-          
-      
-      
         let canvas = document.querySelector(".canvas");
         let ctx = canvas.getContext("2d");
 
