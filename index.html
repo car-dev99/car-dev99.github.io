@@ -20,17 +20,18 @@
             canvas.setAttribute("height", window.innerHeight);
         });
 
+        function startDraw() {
+          document.getElementById("drawButton").innerHTML = "The mouse button is held down.";
+        }
+
+        function stopDraw() {
+           document.getElementById("drawButton").innerHTML = "Released";
+        }
 
         document.getElementById("drawButton").onmousedown = function() {startDraw()};
         document.getElementById("drawButton").onmouseup = function() {stopDraw()};
       
-      function startDraw() {
-        console.log("start draw");
-      }
-
-      function stopDraw() {
-        console.log("stop draw");
-      }
+      
 
     </script>
     
