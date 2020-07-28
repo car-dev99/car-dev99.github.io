@@ -2,22 +2,8 @@
 <html>
   <head></head>
   <body>
-    <button id="demo" style="width:100%;height:100px;background-color:magenta;">Click me.</button>
+      <button id="drawButton" style="width:100%;height:100px;background-color:magenta;">Start Drawing</button>
 
-      <script>
-      document.getElementById("demo").ontouchstart = function() {mouseDown()};
-      document.getElementById("demo").ontouchend = function() {mouseUp()};
-
-      function mouseDown() {
-        document.getElementById("demo").innerHTML = "The mouse button is held down.";
-        console.log("DOWN");
-      }
-
-      function mouseUp() {
-        document.getElementById("demo").innerHTML = "You released the mouse button.";
-        console.log("UP");
-      }
-      </script>
     
     
     <h1 style="margin:auto;"> Start Moving to Draw </h1>
@@ -36,7 +22,18 @@
             canvas.setAttribute("height", window.innerHeight);
         });
 
-        
+      document.getElementById("drawButton").ontouchstart = function() {mouseDown()};
+      document.getElementById("drawButton").ontouchend = function() {mouseUp()};
+
+      function mouseDown() {
+        document.getElementById("drawButton").innerHTML = "Drawing..";
+
+      }
+
+      function mouseUp() {
+        document.getElementById("drawButton").innerHTML = "Draw";
+
+      }
       
 
     </script>
