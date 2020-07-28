@@ -29,9 +29,13 @@ function handleSensor(e){
   }
   
   dist = angles.map((angle, i) => calcDist(angle, initPos[i]));
-  //console.log(dist);
- // draw(dist);
-  laser(dist);
+  console.log(dist);
+
+  if(draw == true && laser == false){
+    draw(dist);
+  }else{
+    laser(dist);
+  }
 }   
 
 function laser(dist_data){
