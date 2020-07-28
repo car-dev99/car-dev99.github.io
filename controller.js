@@ -80,8 +80,10 @@ function draw(dist_data){
       {
         ctx.stroke();
         ctx.closePath();
-        let x = fullPath[i+1][0] + window.innerWidth/2;
-        let y = fullPath[i+1][1] + window.innerHeight/2;
+        i++;
+        ctx.beginPath();
+        let x = fullPath[i][0] + window.innerWidth/2;
+        let y = fullPath[i][1] + window.innerHeight/2;
         ctx.moveTo(x, y);
       }
     }
