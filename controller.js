@@ -39,7 +39,12 @@ function handleSensor(e){
 }   
 
 function laser(dist_data){
-  draw(dist_data);
+  
+  if(fullPath.length != 0)
+  {
+     draw(dist_data);
+  }
+ 
   
  // ctxTop.clearRect(0, 0, canvasTop.width, canvasTop.height);
   let x = dist_data[0] + window.innerWidth/2;
