@@ -57,7 +57,11 @@ function laser(dist_data){
 
 function draw(dist_data){
     //Add new Coordinates to path
-  fullPath.push( dist_data );
+  if(pen)
+  {
+    fullPath.push( dist_data );
+  }
+  
   
   //Clear Canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
