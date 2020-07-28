@@ -68,6 +68,19 @@ function draw(dist_data){
   }
   
   
+  /////see sizes
+  var sizeof = require('object-sizeof')
+  console.log("FullPath");
+  console.log(sizeof(fullPath));
+  
+  let CanvasIMG = canvas.toDataURL();
+  console.log("Image");
+  console.log(sizeof(CanvasIMG));
+
+  
+  //////////////
+  
+  
   //Clear Canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.strokeStyle = "#7242f5" ; //gradient;
