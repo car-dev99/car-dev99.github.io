@@ -2,7 +2,6 @@ const sensor = new AbsoluteOrientationSensor({frequency: 60});
 sensor.addEventListener("reading", (e) => handleSensor(e));
 sensor.start();
 
- var sizeof = require('object-sizeof');
 let initPos;
 let dist;
 let calibrate = true;
