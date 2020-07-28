@@ -61,7 +61,7 @@ function draw(dist_data){
   
   //Clear Canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.strokeStyle = #7242f5 ; //gradient;
+  ctx.strokeStyle = "#7242f5" ; //gradient;
   ctx.lineWidth = 7;
   
   //Start Drawing Path
