@@ -44,17 +44,17 @@ function laser(dist_data){
   {
      draw(dist_data);
   }else{
-   ctxTop.clearRect(0, 0, canvasTop.width, canvasTop.height);
+   ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
 
   let x = dist_data[0] + window.innerWidth/2;
   let y = dist_data[1] + window.innerHeight/2;
 
-  ctxTop.beginPath();
-  ctxTop.arc(x, y, 20, 0, 2 * Math.PI);
-  ctxTop.fillStyle = "#f44336";
-  ctxTop.fill();
-  ctxTop.closePath(); 
+  ctx.beginPath();
+  ctx.arc(x, y, 20, 0, 2 * Math.PI);
+  ctx.fillStyle = "#f44336";
+  ctx.fill();
+  ctx.closePath(); 
   
   
    
