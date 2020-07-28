@@ -65,42 +65,19 @@ function draw(dist_data){
   ctx.lineWidth = 7;
   
   //Start Drawing Path
-  let skipSpace = false;
   
   ctx.beginPath();
     let x = fullPath[0][0] + window.innerWidth/2;
     let y = fullPath[0][1] + window.innerHeight/2;
    ctx.moveTo(x, y);
   for(var i =1  ; i < fullPath.length; i++){
-    if(skipSpace)
-    {
-      ctx.beginPath();
-      let x = fullPath[0][0] + window.innerWidth/2;
-      let y = fullPath[0][1] + window.innerHeight/2;
-      ctx.moveTo(x, y);
-    }else{
       x = fullPath[i][0] + window.innerWidth/2;
       y = fullPath[i][1] + window.innerHeight/2;
       ctx.lineTo(x, y);
-    }
-    
-     if((i+1)<fullPath.length)
-      {
-        if((fullPath[i+1][0])== -9999 && fullPath[i+1][1]== -9999){
-          skipSpace= true;
-          ctx.stroke();
-          ctx.closePath();
-        }
-      }
-   
   }
-  if(!skipSpace)
-  {
     ctx.stroke();
     ctx.closePath(); 
-  }
-  ctx.stroke();
-  ctx.closePath(); 
+ 
   
   
   
