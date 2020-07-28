@@ -30,7 +30,7 @@ function handleSensor(e){
   
   dist = angles.map((angle, i) => calcDist(angle, initPos[i]));
  // console.log(dist);
-
+console.log("IN");
   if(pen == true){
     draw(dist);
   }else{
@@ -39,6 +39,7 @@ function handleSensor(e){
 }   
 
 function laser(dist_data){
+  ctx.globalCompositeOperation = 'source-over';
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   let x = dist_data[0] + window.innerWidth/2;
   let y = dist_data[1] + window.innerHeight/2;
@@ -52,6 +53,7 @@ function laser(dist_data){
 }
 
 function draw(dist_data){
+  ctx.globalCompositeOperation = 'destination-over';
   //Add new Coordinates to path
   fullPath.push( dist_data );
   
