@@ -29,9 +29,11 @@ function handleSensor(e){
   }
   
   dist = angles.map((angle, i) => calcDist(angle, initPos[i]));
-  console.log(dist);
+ // console.log(dist);
 
-  if(pen == true && viewLaser == false){
+  console.log("Pen: " );
+  console.log(pen);
+  if(pen == true){
     draw(dist);
   }else{
     laser(dist);
