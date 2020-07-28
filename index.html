@@ -19,9 +19,16 @@
         });
 
 
-        
+        function startDraw(){
+          console.log("Start Draw");
+        }
+      
+      function stopDraw(){
+         console.log("Stop Draw"); 
+      }
 
     </script>
     <script src="controller.js"></script>
+    <button onmousedown="startDraw()" onmouseup="stopDraw()">Draw</button>
   </body>
 </html>
